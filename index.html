@@ -33,25 +33,35 @@
 
         #banner {
             width: 100%;
-            height: 100vh;
-            background-image: url(banner.jpeg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
+            background: url(banner.jpeg) no-repeat center center/cover;
         }
 
         .overlay {
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            height: 100% !important;
+            background-color: rgba(0, 0, 0, 0.63);
         }
 
         .heading-1 {
             font-size: 70px;
         }
 
-        .btn-newsletter {
-            width: 200px;
+        @media (min-width: 992px) {
+            .btn-newsletter {
+                width: 230px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .heading-1 {
+                font-size: 50px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .heading-1 {
+                font-size: 30px;
+            }
         }
 
         .card-bg {
@@ -63,7 +73,7 @@
         }
 
         #youtube-bg {
-            background: url('youtube.png') no-repeat center center/cover;
+            background: url('./youtube.png') no-repeat center center/cover;
         }
 
         .m-600 {
@@ -77,7 +87,7 @@
         }
 
         .patterns {
-            background: url('pattern.png');
+            background: url('./pattern.png');
         }
     </style>
 </head>
@@ -86,7 +96,7 @@
     <nav class="navbar navbar-expand-lg sticky-top bg-black navbar-dark py-3 d-flex align-items-center">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="img/logo.png" alt="Logo" style="width: 150px;">
+                <img src="./logo.png" alt="Logo" style="width: 150px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -107,10 +117,10 @@
     </nav>
 
     <section id="banner">
-        <div class="overlay">
-            <div class="container h-100">
+        <div class="overlay w-100 h-100 py-5 py-sm-0">
+            <div class="container w-100 h-100 py-5">
                 <div class="w-100 h-100 d-flex flex-column align-items-center justify-content-center">
-                    <p class="text-primary fw-bold fs-4">Mechanical Academy</p>
+                    <p class="text-primary fw-bold fs-4 mt-sm-5">Mechanical Academy</p>
                     <h1 class="text-light heading-1 fw-bold text-center my-3">Aprenda a Fazer do <br> Jeito <span
                             class="text-primary">Certo</span></h1>
                     <p class="text-center text-light">Cursos práticos baseados em projetos que são fáceis de
@@ -120,10 +130,9 @@
 
                     <div class="d-flex align-items-center gap-3 mt-3 mb-5">
                         <a href="#cursos" class="py-3 px-4 btn btn-primary">Ver todos cursos</a>
-                        <!-- <a href="entrar" class="py-3 px-4 btn btn-outline-light">Ver todos cursos</a> -->
                     </div>
 
-                    <div class="d-flex align-items-center justify-content-center w-100 mt-5 text-light">
+                    <div class="d-flex flex-column flex-md-row flex-lg-row align-items-center justify-content-center w-100 mt-0 mt-lg-5 text-light">
                         <div class="d-flex flex-column align-items-center justify-content-center mx-5">
                             <i class="fa-solid fa-graduation-cap heading-1"></i>
                             <h1 class="text-center fw-bold mt-3">5+</h1>
@@ -140,7 +149,6 @@
                             <p class="text-center">Estudantes por curso</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -148,12 +156,14 @@
 
     <section class="py-5 bg-primary">
         <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <h1 class="fw-bold text-uppercase text-light fs-3 mb-0">Notifique-me de novos cursos</h1>
-                <div>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2 py-3" type="email" placeholder="Email" aria-label="email" />
-                        <button class="btn btn-dark text-uppercase btn-newsletter py-3 fw-bold"
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 d-flex align-items-center mb-3 mb-md-0 mb-lg-0">
+                    <h1 class="fw-bold text-uppercase text-light fs-3 mb-0 text-center text-md-start text-lg-start">Notifique-me de novos cursos</h1>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <form class="d-flex flex-column flex-md-column flex-lg-row gap-1 gap-lg-0" role="search">
+                        <input class="form-control py-2" type="email" placeholder="Email" aria-label="email" />
+                        <button class="btn btn-dark text-uppercase btn-newsletter py-2 fw-semibold"
                             type="submit">Notifique-me</button>
                     </form>
                 </div>
@@ -168,7 +178,7 @@
 
             <div class="row mt-4">
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card card-bg text-light W-100 p-1 card-border">
+                    <div class="card card-bg text-light W-100 h-100 p-1 card-border">
                         <div class="card-body d-flex justify-content-between">
                             <div>
                                 <h5 class="fs-6"><i class="fa fa-clock"></i> 25 Horas</h5>
@@ -182,12 +192,12 @@
                                         Curso</a>
                                 </div>
                             </div>
-                            <div><img src="./img/excel.png" style="width: 50px;" alt=""></div>
+                            <div><img src="./excel.png" style="width: 50px;" alt=""></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card card-bg text-light W-100 p-1 card-border">
+                    <div class="card card-bg text-light W-100 h-100 p-1 card-border">
                         <div class="card-body d-flex justify-content-between">
                             <div>
                                 <h5 class="fs-6"><i class="fa fa-clock"></i> 25 Horas</h5>
@@ -200,12 +210,12 @@
                                         Curso</a>
                                 </div>
                             </div>
-                            <div><img src="./img/html-css.png" style="width: 70px;" alt=""></div>
+                            <div><img src="./html-css.png" style="width: 70px;" alt=""></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card card-bg text-light W-100 p-1 card-border">
+                    <div class="card card-bg text-light W-100 h-100 p-1 card-border">
                         <div class="card-body d-flex justify-content-between">
                             <div>
                                 <h5 class="fs-6"><i class="fa fa-clock"></i> 25 Horas</h5>
@@ -218,12 +228,12 @@
                                         Curso</a>
                                 </div>
                             </div>
-                            <div><img src="./img/ws.png" style="width: 50px;" alt=""></div>
+                            <div><img src="./ws.png" style="width: 50px;" alt=""></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card card-bg text-light W-100 p-1 card-border">
+                    <div class="card card-bg text-light W-100 h-100 p-1 card-border">
                         <div class="card-body d-flex justify-content-between">
                             <div>
                                 <h5 class="fs-6"><i class="fa fa-clock"></i> 25 Horas</h5>
@@ -236,12 +246,12 @@
                                         Curso</a>
                                 </div>
                             </div>
-                            <div><img src="./img/js.png" style="width: 40px;" alt=""></div>
+                            <div><img src="./js.png" style="width: 40px;" alt=""></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card card-bg text-light W-100 p-1 card-border">
+                    <div class="card card-bg text-light W-100 h-100 p-1 card-border">
                         <div class="card-body d-flex justify-content-between">
                             <div>
                                 <h5 class="fs-6"><i class="fa fa-clock"></i> 25 Horas</h5>
@@ -255,12 +265,12 @@
                                         Curso</a>
                                 </div>
                             </div>
-                            <div><img src="./img/p-bi.png" style="width: 40px;" alt=""></div>
+                            <div><img src="./p-bi.png" style="width: 40px;" alt=""></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card card-bg text-light W-100 p-1 card-border">
+                    <div class="card card-bg text-light W-100 h-100 p-1 card-border">
                         <div class="card-body d-flex justify-content-between">
                             <div>
                                 <h5 class="fs-6"><i class="fa fa-clock"></i> 25 Horas</h5>
@@ -274,12 +284,12 @@
                                         Curso</a>
                                 </div>
                             </div>
-                            <div><img src="./img/php.png" style="width: 70px;" alt=""></div>
+                            <div><img src="./php.png" style="width: 70px;" alt=""></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card card-bg text-light W-100 p-1 card-border">
+                    <div class="card card-bg text-light W-100 h-100 p-1 card-border">
                         <div class="card-body d-flex justify-content-between">
                             <div>
                                 <h5 class="fs-6"><i class="fa fa-clock"></i> 25 Horas</h5>
@@ -293,12 +303,12 @@
                                         Curso</a>
                                 </div>
                             </div>
-                            <div><img src="./img/ccna.png" style="width: 50px;" alt=""></div>
+                            <div><img src="./ccna.png" style="width: 50px;" alt=""></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card card-bg text-light W-100 p-1 card-border">
+                    <div class="card card-bg text-light W-100 h-100 p-1 card-border">
                         <div class="card-body d-flex justify-content-between">
                             <div>
                                 <h5 class="fs-6"><i class="fa fa-clock"></i> 25 Horas</h5>
@@ -312,12 +322,12 @@
                                         Curso</a>
                                 </div>
                             </div>
-                            <div><img src="./img/ms-p.png" style="width: 50px;" alt=""></div>
+                            <div><img src="./ms-p.png" style="width: 50px;" alt=""></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card card-bg text-light W-100 p-1 card-border">
+                    <div class="card card-bg text-light W-100 h-100 p-1 card-border">
                         <div class="card-body d-flex justify-content-between">
                             <div>
                                 <h5 class="fs-6"><i class="fa fa-clock"></i> 25 Horas</h5>
@@ -330,7 +340,7 @@
                                         Curso</a>
                                 </div>
                             </div>
-                            <div><img src="./img/wp.png" style="width: 50px;" class="rounded-5" alt=""></div>
+                            <div><img src="./wp.png" style="width: 50px;" class="rounded-5" alt=""></div>
                         </div>
                     </div>
                 </div>
@@ -341,11 +351,11 @@
     <section class="py-5" id="youtube-bg">
         <div class="container py-5">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <img src="./img/frame-youtube.png" alt="" class="w-100">
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 mb-md-0 mb-lg-0">
+                    <img src="./frame-youtube.png" alt="" class="w-100">
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 d-flex flex-column align-items-center justify-content-center">
-                    <h2 class="text-light fw-bold">Mechanical Tecnologia no YouTube</h2>
+                    <h2 class="text-light fw-bold text-center">Mechanical Tecnologia no YouTube</h2>
                     <p class="text-center text-light">Nosso canal no YouTube tem mais de <span class="fw-bold">2 milhões
                             de assinantes</span> com <span class="fw-bold">1000+</span> tutoriais gratuitos e cursos
                         intensivos.</p>
@@ -373,8 +383,8 @@
                         </h2>
                         <div id="flush-collapseOne" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">É um ambiente online desenvolvido pela própria empresa, onde
-                                oferecemos cursos exclusivos ministrados pelos nossos especialistas. O aluno tem acesso
+                            <div class="accordion-body">É uma plataforma de ensino online desenvolvido pela <a href="https://mechanical.co.mz" class="text-decoration-none" target="_blank">Mechanical Tecnologia</a>, onde
+                                oferecemos cursos exclusivos lecionados pelos nossos especialistas. O aluno tem acesso
                                 a conteúdos atualizados, atividades práticas e suporte direto com a nossa equipe.
                             </div>
                         </div>
@@ -460,11 +470,11 @@
     <footer class="py-3 bg-dark ">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-12">
-                    <img src="./img/logo.png" style="width: 150px;" alt="">
+                <div class="col-lg-2 col-md-3 col-sm-12">
+                    <img src="./logo.png" style="width: 150px;" alt="">
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-12 d-flex align-items-center justify-content-center">
-                    <p class="text-light text-center mb-0">&copy; 2025 Mechanical Academy. Todos Direitos Reservados</p>
+                <div class="col-lg-8 col-md-7 col-sm-12 d-flex align-items-center justify-content-center my-3 my-md-0 my-lg-0">
+                    <p class="text-light text-start text-md-center text-lg-center mb-0">&copy; 2025 Mechanical Academy. Todos Direitos Reservados</p>
                 </div>
                 <div class="col-lg-2 col-md-2 col-12 d-flex align-items-center gap-1">
                     <a href="https://facebook.com" class="text-decoration-none text-light"><i
